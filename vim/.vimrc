@@ -15,6 +15,8 @@ endif
 
 set pastetoggle=<F2>
 
+set packpath+=~/.vim/pack/
+
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent
 autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent
 
