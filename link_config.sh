@@ -1,15 +1,15 @@
 #!/bin/bash
 
 # zsh
-ln -sf $HOME/.setup/zshrc $HOME/.zshrc
-ln -sf $HOME/.setup/ohmyzsh $HOME/.oh-my-zsh
+ln -sf $PWD/zshrc $HOME/.zshrc
+ln -sf $PWD/ohmyzsh $HOME/.oh-my-zsh
 
 # tmux
-ln -sf $HOME/.setup/tmux.conf $HOME/.tmux.conf
+ln -sf $PWD/tmux.conf $HOME/.tmux.conf
 
 # vim
-ln -sf $HOME/.setup/vim $HOME/.vim
-ln -sf $HOME/.setup/vim/.vimrc $HOME/.vimrc
+ln -sf $PWD/vim $HOME/.vim
+ln -sf $PWD/vim/.vimrc $HOME/.vimrc
 
 
 
