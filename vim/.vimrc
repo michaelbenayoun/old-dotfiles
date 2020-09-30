@@ -1,27 +1,46 @@
-syntax enable
-
 set softtabstop=2
 set shiftwidth=2
 set noexpandtab
-
-set background=dark
-set t_Co=256
-
-
+set backspace=indent,eol,start
 set pastetoggle=<F2>
 
-set packpath+=~/.vim/pack/
+" Color management
+"set background=dark
+"set t_Co=256
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
 
+" Colorscheme
+packadd! dracula
+syntax enable
+let g:dracula_italic = 0
+colorscheme dracula
+
+
+" Plugin management.
+set packpath+=~/.vim/pack/
+packadd! vim-polyglot
+
+" Linter
+let g:ale_linters = {
+      \   'python': ['flake8', 'pylint'],
+      \   'javascript': ['eslint'],
+      \}
+
+let g:ale_fixers = {
+      \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \}
+
+let g:ale_fix_on_save = 1
+
+" Language specific configuration
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent
 autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent
+autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent
 
 " Vertical split and status line config.
 set laststatus=0
 set fillchars+=vert:│
 hi VertSplit cterm=NONE guibg=NONE
-
-
-
-
-
 
