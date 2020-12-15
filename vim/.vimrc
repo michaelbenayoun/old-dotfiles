@@ -11,16 +11,19 @@ let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 
+" Plugin management.
+set packpath+=~/.vim/pack/
+packadd vim-polyglot
+
 " Colorscheme
 packadd! dracula
 syntax enable
+" hi Normal ctermbg = None
+let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 colorscheme dracula
 
 
-" Plugin management.
-set packpath+=~/.vim/pack/
-packadd! vim-polyglot
 
 " Linter
 let g:ale_linters = {
@@ -43,4 +46,3 @@ autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expand
 set laststatus=0
 set fillchars+=vert:│
 hi VertSplit cterm=NONE guibg=NONE
-
