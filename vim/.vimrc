@@ -1,6 +1,6 @@
 set softtabstop=2
 set shiftwidth=2
-set noexpandtab
+set expandtab
 set backspace=indent,eol,start
 set pastetoggle=<F2>
 
