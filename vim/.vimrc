@@ -15,6 +15,8 @@ set termguicolors
 set packpath+=~/.vim/pack/
 packadd vim-polyglot
 
+let mapleader = ","
+
 " Colorscheme
 packadd! dracula
 syntax enable
@@ -38,9 +40,29 @@ let g:ale_fix_on_save = 1
 
 " YouCompleteMe
 let g:ycm_autoclose_preview_window_after_completion = 1
+map <leader>yfw <Plug>(YCMFindSymbolInWorkspace)
+map <leader>yfd <Plug>(YCMFindSymbolInDocument)
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
+nnoremap <leader>gti :YcmCompleter GoToImprecise<CR>
+nnoremap <leader>gtd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>gtd' :YcmCompleter GoToDeclaration<CR>
+map <leader>gts :YcmCompleter GoToSymbol
+map <leader>gtdo :YcmCompleter GoToDocumentOutline
+map <leader>gtr :YcmCompleter GoToReferences<CR>
+
+nnoremap <leader>gty :YcmCompleter GetType<CR>
+nnoremap <leader>gd :YcmCompleter GetDoc<CR>
+
+" NERDTree
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :NERDTree<CR>
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-f> :NERDTreeFind<CR>
 
 " Language specific configuration
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent
+let g:python_highlight_all = 1
+
 autocmd FileType rust setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent
 autocmd FileType haskell setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab autoindent
