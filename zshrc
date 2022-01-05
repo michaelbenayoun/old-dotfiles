@@ -75,6 +75,7 @@ plugins=(
   docker
   zsh-autosuggestions
   zsh-syntax-highlighting
+  autojump
 )
 source $ZSH/oh-my-zsh.sh
 
@@ -119,3 +120,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+
+# autojump
+[[ -s /home/michael/.autojump/etc/profile.d/autojump.sh ]] && source /home/michael/.autojump/etc/profile.d/autojump.sh
+autoload -U compinit && compinit -u

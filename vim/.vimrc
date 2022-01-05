@@ -19,11 +19,13 @@ let mapleader = ","
 
 " Colorscheme
 packadd! dracula
+packadd! nord-vim
 syntax enable
 " hi Normal ctermbg = None
 let g:dracula_colorterm = 0
 let g:dracula_italic = 0
 colorscheme dracula
+" colorscheme nord
 
 " Linter
 let g:ale_linters = {
@@ -58,6 +60,28 @@ nnoremap <leader>n :NERDTreeFocus<CR>
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+
+" fzf
+nnoremap <C-p> :GFiles<CR>
+nnoremap <leader>p :Files<CR>
+nnoremap <C-g> :Rg<CR>
+nnoremap <leader>l :Buffers<CR>
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Ignore'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
+
 
 " Language specific configuration
 autocmd FileType python setlocal shiftwidth=4 tabstop=4 softtabstop=4 expandtab autoindent

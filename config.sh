@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Setting up the submodules
-# git submodule update --init --recursive
+git submodule update --init --recursive
 
 # OhMyZSH plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
